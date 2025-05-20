@@ -20,16 +20,14 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        // Creating Variables for the Buttons
         var btStartFirstScreen = findViewById<Button>(R.id.btStartFirstScreen)
 
-
+        // On Click Listener for the Button so that it will go to the next screen (Flash Card Screen)
         btStartFirstScreen.setOnClickListener {
-
+            val intent = Intent(this, FlashCardQuestionActivity::class.java)
+            startActivity(intent)
         }
-
-
-
-
 
     }
 
