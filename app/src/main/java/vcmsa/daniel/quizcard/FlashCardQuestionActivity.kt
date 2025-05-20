@@ -19,7 +19,7 @@ class FlashCardQuestionActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        //  Variables for later use
         var tvQuestionsAsked = findViewById<TextView>(R.id.tvQuestionsAsked)
         var btNextFlashCardScreen = findViewById<Button>(R.id.btNextFlashCardScreen)
         var btTrueFlashCardScreen = findViewById<Button>(R.id.btTrueFlashCardScreen)
@@ -76,8 +76,9 @@ class FlashCardQuestionActivity : AppCompatActivity() {
                     answerArray[0+1]
                 }
             }
+        // This button will go to the Score Screen Activity
             btNextFlashCardScreen.setOnClickListener {
-                val intent = Intent(this, ScoreScreenActivity::class.java)
+                val intent = Intent(this, ScoreScreenActivity::class.java).putExtra("score", score)
                 startActivity(intent)
             }
         }
