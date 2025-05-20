@@ -7,4 +7,64 @@
     android:layout_height="match_parent"
     tools:context=".ScoreScreenActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00BCD4"
+        android:backgroundTint="#66A4C5"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="61dp">
+
+        <Button
+            android:id="@+id/btReviewScoreScreen"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="#4EF655"
+            android:fontFamily="sans-serif-black"
+            android:text="Review"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btExitScoreScreen"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="#FF0000"
+            android:fontFamily="sans-serif-black"
+            android:text="Exit"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvScoreScreenTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="Score "
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvUserScore"
+            android:layout_width="359dp"
+            android:layout_height="119dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="36dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
