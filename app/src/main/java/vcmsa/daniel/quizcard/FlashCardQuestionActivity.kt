@@ -59,8 +59,10 @@ class FlashCardQuestionActivity : AppCompatActivity() {
                 if (answer == answerArray[0]) {
                     score++
                     questionCounter++
+                    answerArray[0+1]
                 } else {
                     questionCounter++
+                    answerArray[0+1]
                 }
             }
         // I use the button to check if the answer is correct by checking the answer in the answerArray and if correct user gets +1 score and questionCounter goes up. If user answer is incorrect only the questionCounter goes up.
@@ -68,8 +70,10 @@ class FlashCardQuestionActivity : AppCompatActivity() {
                 if (answer == answerArray[0]) {
                     score++
                     questionCounter++
+                    answerArray[0+1]
                 } else {
                     questionCounter++
+                    answerArray[0+1]
                 }
             }
             btNextFlashCardScreen.setOnClickListener {
