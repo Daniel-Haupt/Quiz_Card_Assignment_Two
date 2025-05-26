@@ -24,7 +24,7 @@ Why Github:
 I've chosen GitHub and GitHub actions for their ease of access and professionalism in documentation and storages of files as my place of frequent commits and place to keep the code in a professional format.
 
 
-Reference List 
+Reference List:
 
 Yu, A., (2025). "The Complete Full-Stack Web Development Bootcamp" [Online]. Available at: https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=24T7MT260525G3 [Accessed 2022 - 2025]
 Els, L. (2025). "Coding up the Quiz App with lots of debugging" [Online]. Available at https://www.youtube.com/watch?v=K13fR2RHTak&t=241s [Accessed 26/05/2025]
