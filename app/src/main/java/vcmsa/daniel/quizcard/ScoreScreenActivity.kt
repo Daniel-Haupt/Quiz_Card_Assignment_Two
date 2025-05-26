@@ -26,6 +26,7 @@ class ScoreScreenActivity : AppCompatActivity() {
 
         // This retrieves the score we got from the FlashCardQuestionActivity
         val score = intent.getIntExtra("score", 0)
+        // This changes the textview to display the score and feedback based on how well the user did.
         tvUserScore.text = "Your score is :$score/5"
         if (score == 5) {
             tvUserScore.text = "You got all the questions correct!"
@@ -44,7 +45,7 @@ class ScoreScreenActivity : AppCompatActivity() {
         }
 
 
-
+        // On Click Listeners for the Buttons takes the user to the Review Screen or exits the app.
         btReviewScoreScreen.setOnClickListener {
             val intent = Intent(this, Review_screen::class.java)
 

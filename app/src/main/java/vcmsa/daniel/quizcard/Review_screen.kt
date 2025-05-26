@@ -17,10 +17,10 @@ class Review_screen : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+//        Creating Variables for later use
         var tvanswerOutput = findViewById<TextView>(R.id.tvReviewAnswerOutput)
 
-
+//        I make use of an Array for the Questions and Answers.
         val questionArray = arrayOf(
             "\nQuestion 1: The Titanic sank 1912\n",
             "\nQuestion 2: World war 2 ended in 1940\n",
@@ -35,7 +35,7 @@ class Review_screen : AppCompatActivity() {
             "False",
             "False",
         )
-
+//        I change the array to use the question counter to loop through the array and display the questions and answer in the textview.
         tvanswerOutput.text = questionArray[0] + " Correct Answer: \n" + answerArray[0]
         tvanswerOutput.append(questionArray[1] + " Correct Answer: \n" + answerArray[1])
         tvanswerOutput.append(questionArray[2] + " Correct Answer: \n" + answerArray[2])

@@ -51,9 +51,9 @@ class FlashCardQuestionActivity : AppCompatActivity() {
         // I change the array to use the question counter to loop through the array
         questionArray[questionCounter]
         answerArray[questionCounter]
-
+        // Changing the textview to display the question
         tvQuestionsAsked.text = questionArray[questionCounter]
-
+        // On Click Listeners for the True and False Buttons. Inside the Click Listener I check if the answer is correct or not, disable the buttons, change the textview to display the answer and score.
         btTrueFlashCardScreen.setOnClickListener {
             if (answerArray[questionCounter] == "True") {
                 score++
@@ -79,6 +79,7 @@ class FlashCardQuestionActivity : AppCompatActivity() {
                 tvCorrectOrIncorrect.text = "Incorrect"
             }
         }
+        // On Click Listener for the Next Button. This loop to the next question in the array and disables the buttons.
         btNextFlashCardScreen.setOnClickListener {
             questionCounter++
             questionArray[questionCounter]
@@ -91,6 +92,7 @@ class FlashCardQuestionActivity : AppCompatActivity() {
                 btNextFlashCardScreen.isEnabled = false
             }
         }
+        // On Click Listener for the Score Screen Button. It takes the user to the Score Screen and sends the score to the Score Screen.
         btToScoreScreen.setOnClickListener {
             val intent = Intent(this, ScoreScreenActivity::class.java)
             intent.putExtra("score", score)
