@@ -1,6 +1,7 @@
 package vcmsa.daniel.quizcard
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,7 @@ class Review_screen : AppCompatActivity() {
         }
 //        Creating Variables for later use
         var tvanswerOutput = findViewById<TextView>(R.id.tvReviewAnswerOutput)
+        var btExitScoreScreen2 = findViewById<Button>(R.id.btExitScoreScreen2)
 
 //        I make use of an Array for the Questions and Answers.
         val questionArray = arrayOf(
@@ -41,6 +43,12 @@ class Review_screen : AppCompatActivity() {
         tvanswerOutput.append(questionArray[2] + " Correct Answer: \n" + answerArray[2])
         tvanswerOutput.append(questionArray[3] + " Correct Answer: \n" + answerArray[3])
         tvanswerOutput.append(questionArray[4] + " Correct Answer: \n" + answerArray[4])
+
+ //     Exit Button to exit the activity
+        btExitScoreScreen2.setOnClickListener {
+            finish()
+        }
+
 
 
 

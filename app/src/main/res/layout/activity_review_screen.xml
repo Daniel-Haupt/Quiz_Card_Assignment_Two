@@ -42,10 +42,10 @@
 
         <TextView
             android:id="@+id/tvReviewAnswerOutput"
-            android:layout_width="300dp"
-            android:layout_height="500dp"
+            android:layout_width="375dp"
+            android:layout_height="571dp"
             android:fontFamily="sans-serif-black"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
