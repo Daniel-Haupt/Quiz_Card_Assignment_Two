@@ -25,8 +25,6 @@ class ScoreScreenActivity : AppCompatActivity() {
 
         // This retrieves the score we got from the FlashCardQuestionActivity
         val score = intent.getIntExtra("score", 0)
-
-
         tvUserScore.text = "Your score is :$score/5"
 
 

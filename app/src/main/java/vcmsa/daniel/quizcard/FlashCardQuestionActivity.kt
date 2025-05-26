@@ -27,19 +27,20 @@ class FlashCardQuestionActivity : AppCompatActivity() {
 
         // I make use of an Array for the Questions and Answers
         val questionArray = arrayOf(
-                "Did the Titanic sink 1912?",
-                "Did world war 2 end in 1940?",
-                "Was South Africa the first country to lad on the moon?",
-                "Abraham Lincoln is the first president of the United States?",
-                "The Great Depression in Germany started in 1925?",
+            "Did the Titanic sink 1912?",
+            "Did world war 2 end in 1940?",
+            "Was South Africa the first country to lad on the moon?",
+            "Abraham Lincoln is the first president of the United States?",
+            "The Great Depression in Germany started in 1925?",
         )
         val answerArray = arrayOf(
-                "True",
-                "False",
-                "False",
-                "False",
-                "False",
+            "True",
+            "False",
+            "False",
+            "False",
+            "False",
         )
+
         // I declare the questionCounter and score variables, setting them both to 0
         var questionCounter = 0
         var score = 0
@@ -48,63 +49,57 @@ class FlashCardQuestionActivity : AppCompatActivity() {
         var question = questionArray[questionCounter]
         var answer = answerArray[questionCounter]
 
-        // I print the question to the screen
         tvQuestionsAsked.text = question
 
+        btTrueFlashCardScreen.setOnClickListener {
+            if (answerArray[questionCounter] == "True") {
+                score++
+            }
+            if (questionCounter == 4) {
+                btFalseFlashCardScreen.isEnabled = false
+                btTrueFlashCardScreen.isEnabled = false
+            } else {
 
-        // I make use of a While Loop to loop through the questionArray and answerArray
-        while (questionCounter < questionArray.size) {
-        // I use the button to check if the answer is correct by checking the answer in the answerArray and if correct user gets +1 score and questionCounter goes up. If user answer is incorrect only the questionCounter goes up.
-            btTrueFlashCardScreen.setOnClickListener {
-                if (answer == answerArray[0]) {
-                    score++
-                    questionCounter++
-                    answerArray[0+1]
-                } else {
-                    questionCounter++
-                    answerArray[0+1]
-                }
-            }
-        // I use the button to check if the answer is correct by checking the answer in the answerArray and if correct user gets +1 score and questionCounter goes up. If user answer is incorrect only the questionCounter goes up.
-            btFalseFlashCardScreen.setOnClickListener {
-                if (answer == answerArray[0]) {
-                    score++
-                    questionCounter++
-                    answerArray[0+1]
-                } else {
-                    questionCounter++
-                    answerArray[0+1]
-                }
-            }
-        // This button will go to the Score Screen Activity
-            btNextFlashCardScreen.setOnClickListener {
-                val intent = Intent(this, ScoreScreenActivity::class.java).putExtra("score", score)
-                startActivity(intent)
+                questionCounter++
+                question = questionArray[questionCounter]
+                answer = answerArray[questionCounter]
+                tvQuestionsAsked.text = question
             }
         }
+        btFalseFlashCardScreen.setOnClickListener {
+            if (answerArray[questionCounter] == "False") {
+                score++
+            }
+            if (questionCounter == 4) {
+                btFalseFlashCardScreen.isEnabled = false
+                btTrueFlashCardScreen.isEnabled = false
+            } else {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                questionCounter++
+                question = questionArray[questionCounter]
+                answer = answerArray[questionCounter]
+                tvQuestionsAsked.text = question
+            }
+        }
+        btNextFlashCardScreen.setOnClickListener {
+            val intent = Intent(this, ScoreScreenActivity::class.java)
+            intent.putExtra("score", score)
+            startActivity(intent)
+            finish()
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
