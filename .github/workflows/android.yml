@@ -20,7 +20,15 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
+
+    - name: Upgrade Gradle wrapper to Gradle 9
+      run: ./gradlew wrapper  --gradle-version 9
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+
+    
+    - name: Upgrade Gradle wrapper to Gradle 9
+      run: ./gradlew wrapper  --gradle-version 9
+
+   
