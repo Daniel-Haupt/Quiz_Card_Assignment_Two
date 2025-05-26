@@ -58,24 +58,24 @@
 
         <TextView
             android:id="@+id/tvQuestionsAsked"
-            android:layout_width="370dp"
-            android:layout_height="332dp"
+            android:layout_width="365dp"
+            android:layout_height="176dp"
             android:layout_marginStart="28dp"
+            android:layout_marginTop="300dp"
             android:layout_marginEnd="21dp"
-            android:layout_marginBottom="300dp"
             android:fontFamily="sans-serif-black"
             android:textAlignment="center"
             android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.375"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btNextFlashCardScreen"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="75dp"
             android:backgroundTint="#EF6033"
             android:fontFamily="sans-serif-black"
             android:text="Next"
@@ -83,6 +83,31 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btToScoreScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginEnd="161dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Score Screen"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCorrectOrIncorrect"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="450dp"
+            android:fontFamily="sans-serif-black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

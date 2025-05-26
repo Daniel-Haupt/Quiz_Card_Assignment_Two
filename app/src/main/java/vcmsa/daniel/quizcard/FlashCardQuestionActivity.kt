@@ -24,14 +24,16 @@ class FlashCardQuestionActivity : AppCompatActivity() {
         var btNextFlashCardScreen = findViewById<Button>(R.id.btNextFlashCardScreen)
         var btTrueFlashCardScreen = findViewById<Button>(R.id.btTrueFlashCardScreen)
         var btFalseFlashCardScreen = findViewById<Button>(R.id.btFalseFlashCardScreen)
+        var btToScoreScreen = findViewById<Button>(R.id.btToScoreScreen)
+        var tvCorrectOrIncorrect = findViewById<TextView>(R.id.tvCorrectOrIncorrect)
 
         // I make use of an Array for the Questions and Answers
         val questionArray = arrayOf(
-            "Did the Titanic sink 1912?",
-            "Did world war 2 end in 1940?",
-            "Was South Africa the first country to lad on the moon?",
-            "Abraham Lincoln is the first president of the United States?",
-            "The Great Depression in Germany started in 1925?",
+            "Question 1: The Titanic sank 1912",
+            "Question 2: World war 2 ended in 1940",
+            "Question 3: South Africa wsa the first country to land on the moon",
+            "Question 4: Abraham Lincoln is the first president of the United States",
+            "Question 5: The Great Depression in Germany started in 1925",
         )
         val answerArray = arrayOf(
             "True",
@@ -45,43 +47,51 @@ class FlashCardQuestionActivity : AppCompatActivity() {
         var questionCounter = 0
         var score = 0
 
-        // I change the array to use the question counter to loop through the array
-        var question = questionArray[questionCounter]
-        var answer = answerArray[questionCounter]
 
-        tvQuestionsAsked.text = question
+        // I change the array to use the question counter to loop through the array
+        questionArray[questionCounter]
+        answerArray[questionCounter]
+
+        tvQuestionsAsked.text = questionArray[questionCounter]
 
         btTrueFlashCardScreen.setOnClickListener {
             if (answerArray[questionCounter] == "True") {
                 score++
-            }
-            if (questionCounter == 4) {
                 btFalseFlashCardScreen.isEnabled = false
                 btTrueFlashCardScreen.isEnabled = false
-            } else {
+                tvCorrectOrIncorrect.text = "Correct"
 
-                questionCounter++
-                question = questionArray[questionCounter]
-                answer = answerArray[questionCounter]
-                tvQuestionsAsked.text = question
+            } else {
+                btFalseFlashCardScreen.isEnabled = false
+                btTrueFlashCardScreen.isEnabled = false
+                tvCorrectOrIncorrect.text = "Incorrect"
             }
         }
         btFalseFlashCardScreen.setOnClickListener {
             if (answerArray[questionCounter] == "False") {
                 score++
-            }
-            if (questionCounter == 4) {
                 btFalseFlashCardScreen.isEnabled = false
                 btTrueFlashCardScreen.isEnabled = false
+                tvCorrectOrIncorrect.text = "Correct"
             } else {
-
-                questionCounter++
-                question = questionArray[questionCounter]
-                answer = answerArray[questionCounter]
-                tvQuestionsAsked.text = question
+                btFalseFlashCardScreen.isEnabled = false
+                btTrueFlashCardScreen.isEnabled = false
+                tvCorrectOrIncorrect.text = "Incorrect"
             }
         }
         btNextFlashCardScreen.setOnClickListener {
+            questionCounter++
+            questionArray[questionCounter]
+            answerArray[questionCounter]
+            tvQuestionsAsked.text = questionArray[questionCounter]
+            btFalseFlashCardScreen.isEnabled = true
+            btTrueFlashCardScreen.isEnabled = true
+            tvCorrectOrIncorrect.text = ""
+            if (questionCounter == 4) {
+                btNextFlashCardScreen.isEnabled = false
+            }
+        }
+        btToScoreScreen.setOnClickListener {
             val intent = Intent(this, ScoreScreenActivity::class.java)
             intent.putExtra("score", score)
             startActivity(intent)
